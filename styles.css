@@ -109,9 +109,9 @@ a { color: inherit; }
 }
 
 .header-inner {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 24px;
+  max-width: none;
+  margin: 0;
+  padding: 0 28px 0 0;
   height: 100%;
   display: flex;
   align-items: center;
@@ -126,13 +126,17 @@ a { color: inherit; }
   text-decoration: none;
 }
 
-/* Official lockup is white-on-transparent; falls back to text if missing. */
+/* Official lockup is white-on-transparent; falls back to text if missing.
+   The header mark sits flush against the viewport's left edge. */
 .brand-logo {
-  height: 46px;
+  height: 56px;
   width: auto;
 }
 
-.brand-logo-sm { height: 40px; }
+.brand-logo-sm { height: 44px; }
+
+/* keep the text fallback off the raw viewport edge if the image is missing */
+.site-header .brand.logo-missing { padding-left: 24px; }
 
 .brand-fallback { display: none; }
 .brand.logo-missing .brand-logo { display: none; }
