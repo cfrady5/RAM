@@ -126,42 +126,14 @@ a { color: inherit; }
   text-decoration: none;
 }
 
-/* Official lockup is white-on-transparent; falls back to text if missing.
-   The header mark sits flush against the viewport's left edge. */
+/* Official lockup is white-on-transparent; the header mark sits flush
+   against the viewport's left edge. */
 .brand-logo {
   height: 56px;
   width: auto;
 }
 
 .brand-logo-sm { height: 44px; }
-
-/* keep the text fallback off the raw viewport edge if the image is missing */
-.site-header .brand.logo-missing { padding-left: 24px; }
-
-/* fallback text shows only when the logo image fails to load
-   (.brand selector needed to outrank .brand-text's display rule below) */
-.brand .brand-fallback { display: none; }
-.brand.logo-missing .brand-logo { display: none; }
-.brand.logo-missing .brand-fallback { display: flex; }
-
-.brand-text {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: 0.04em;
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.brand-sub {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--steel);
-}
 
 .main-nav {
   display: flex;
