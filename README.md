@@ -42,8 +42,12 @@ a CNAME record and link to that.
 - **Marketplace "Learn More" links**: currently anchor to the contact section;
   swap in real marketplace URLs (Tradewinds, DARPA ERIS, Platform One) once
   approved for public use.
-- **Branding**: the RAM wordmark is a placeholder SVG; replace with the
-  official RAM/ARI lockup when final logo usage is confirmed.
+- **Logo asset**: the header and footer load the official lockup from
+  `assets/ram-logo.png`. Add the logo file at that exact path (PNG, ideally
+  trimmed of excess whitespace). Until the file exists, the site shows a text
+  fallback automatically. A version with a transparent background also works —
+  the logo is displayed on a white chip either way so the navy/gray lockup
+  stays readable on the dark header.
 - **Org logos**: the "Applied Across Government" section uses text cards;
   swap in official logos only if usage is approved.
 

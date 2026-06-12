@@ -19,14 +19,10 @@
   <!-- ============ Sticky Navigation ============ -->
   <header class="site-header" id="siteHeader">
     <div class="header-inner">
-      <a href="#top" class="brand" aria-label="Rapid Acquisition Model home">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
-            <rect x="1" y="1" width="30" height="30" rx="6" stroke="#2D6BFF" stroke-width="2"/>
-            <path d="M9 22V10h6.5a4 4 0 0 1 0 8H13l6 4" stroke="#F5F7FA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        <span class="brand-text">RAM<span class="brand-sub">Rapid Acquisition Model</span></span>
+      <a href="#top" class="brand" aria-label="Rapid Acquisition Marketplace home">
+        <img class="brand-logo" src="assets/ram-logo.png" alt="RAM — Rapid Acquisition Marketplace"
+             onerror="this.closest('.brand').classList.add('logo-missing')" />
+        <span class="brand-text brand-fallback">RAM<span class="brand-sub">Rapid Acquisition Marketplace</span></span>
       </a>
 
       <nav class="main-nav" id="mainNav" aria-label="Primary">
@@ -62,14 +58,31 @@
       </div>
 
       <div class="container hero-content">
-        <p class="hero-kicker">An Acquisition Innovation Model</p>
-        <h1>Accelerating how government discovers, evaluates, and awards emerging technology.</h1>
-        <p class="hero-sub">The Rapid Acquisition Model helps government agencies move from initial engagement to awardable outcomes through a transparent, data-driven marketplace approach built for speed, access, and mission alignment.</p>
-        <div class="hero-ctas">
-          <a href="#contact" class="btn btn-primary">Explore RAM in Action</a>
-          <a href="#process" class="btn btn-secondary">See How It Works</a>
+        <div class="hero-grid">
+          <div class="hero-text">
+            <p class="hero-kicker">An Acquisition Innovation Model</p>
+            <h1>Accelerating how government discovers, evaluates, and awards emerging technology.</h1>
+            <p class="hero-sub">The Rapid Acquisition Model helps government agencies move from initial engagement to awardable outcomes through a transparent, data-driven marketplace approach built for speed, access, and mission alignment.</p>
+            <div class="hero-ctas">
+              <a href="#contact" class="btn btn-primary">Explore RAM in Action</a>
+              <a href="#process" class="btn btn-secondary">See How It Works</a>
+            </div>
+            <p class="hero-support">A modern acquisition model designed to reduce friction, broaden participation, and move mission-relevant capability faster.</p>
+          </div>
+
+          <div class="hero-video">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/e688KErAKjA"
+                title="Rapid Acquisition Model overview video"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+            </div>
+            <p class="video-caption">See the Rapid Acquisition Model in action.</p>
+          </div>
         </div>
-        <p class="hero-support">A modern acquisition model designed to reduce friction, broaden participation, and move mission-relevant capability faster.</p>
 
         <ul class="proof-chips" aria-label="RAM highlights">
           <li>Funding Opportunities</li>
@@ -518,14 +531,10 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="#top" class="brand" aria-label="Rapid Acquisition Model home">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
-              <rect x="1" y="1" width="30" height="30" rx="6" stroke="#2D6BFF" stroke-width="2"/>
-              <path d="M9 22V10h6.5a4 4 0 0 1 0 8H13l6 4" stroke="#F5F7FA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <span class="brand-text">RAM</span>
+        <a href="#top" class="brand" aria-label="Rapid Acquisition Marketplace home">
+          <img class="brand-logo brand-logo-sm" src="assets/ram-logo.png" alt="RAM — Rapid Acquisition Marketplace"
+               onerror="this.closest('.brand').classList.add('logo-missing')" />
+          <span class="brand-text brand-fallback">RAM</span>
         </a>
         <p>RAM helps government and innovators move from discovery to awardable outcomes through faster, clearer, and more transparent acquisition pathways.</p>
       </div>

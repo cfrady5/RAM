@@ -126,6 +126,22 @@ a { color: inherit; }
   text-decoration: none;
 }
 
+/* Official lockup is navy/gray on white, so it sits on a white chip
+   against the dark header. Falls back to text if the asset is missing. */
+.brand-logo {
+  height: 44px;
+  width: auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 4px 10px;
+}
+
+.brand-logo-sm { height: 38px; }
+
+.brand-fallback { display: none; }
+.brand.logo-missing .brand-logo { display: none; }
+.brand.logo-missing .brand-fallback { display: flex; }
+
 .brand-text {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -230,6 +246,41 @@ a { color: inherit; }
 
 .hero-content { position: relative; z-index: 1; }
 
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 2.6rem;
+}
+
+.hero-video { min-width: 0; }
+
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(45, 107, 255, 0.35);
+  background: var(--midnight);
+  box-shadow: 0 24px 64px rgba(2, 7, 19, 0.65), 0 0 0 1px rgba(45, 107, 255, 0.12);
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-caption {
+  margin-top: 0.9rem;
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--steel);
+}
+
 .hero-kicker {
   font-family: var(--font-heading);
   text-transform: uppercase;
@@ -240,7 +291,7 @@ a { color: inherit; }
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-size: clamp(2.1rem, 3.6vw, 3.1rem);
   font-weight: 700;
   line-height: 1.08;
   max-width: 21ch;
@@ -256,7 +307,7 @@ a { color: inherit; }
 
 .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 1.6rem; }
 
-.hero-support { color: var(--steel); font-size: 0.95rem; max-width: 60ch; margin-bottom: 2.6rem; }
+.hero-support { color: var(--steel); font-size: 0.95rem; max-width: 60ch; }
 
 .proof-chips {
   display: flex;
@@ -920,6 +971,7 @@ a { color: inherit; }
    ========================================================================== */
 
 @media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .metric-grid { grid-template-columns: repeat(2, 1fr); gap: 36px 28px; }
   .outcomes-row { grid-template-columns: repeat(2, 1fr); }
   .pillar-grid { grid-template-columns: repeat(2, 1fr); }
@@ -971,6 +1023,7 @@ a { color: inherit; }
 
 @media (max-width: 560px) {
   .hero { padding-top: calc(var(--header-h) + 40px); }
+  .brand-logo { height: 36px; padding: 3px 8px; }
   .metric-grid { grid-template-columns: 1fr 1fr; gap: 28px 18px; }
   .outcomes-row, .pillar-grid, .org-grid { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
