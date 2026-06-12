@@ -1,4 +1,4 @@
-/* Rapid Acquisition Model — site interactions */
+/* Rapid Acquisition Marketplace — site interactions */
 
 (function () {
   "use strict";

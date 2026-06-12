@@ -1,6 +1,6 @@
-# Rapid Acquisition Model (RAM) Website
+# Rapid Acquisition Marketplace (RAM) Website
 
-A static, single-page marketing site for the Rapid Acquisition Model, built to be
+A static, single-page marketing site for the Rapid Acquisition Marketplace, built to be
 hosted on GitHub Pages and linked from Wix.
 
 ## Stack
@@ -42,12 +42,10 @@ a CNAME record and link to that.
 - **Marketplace "Learn More" links**: currently anchor to the contact section;
   swap in real marketplace URLs (Tradewinds, DARPA ERIS, Platform One) once
   approved for public use.
-- **Logo asset**: the header and footer load the official lockup from
-  `assets/ram-logo.png`. Add the logo file at that exact path (PNG, ideally
-  trimmed of excess whitespace). Until the file exists, the site shows a text
-  fallback automatically. A version with a transparent background also works —
-  the logo is displayed on a white chip either way so the navy/gray lockup
-  stays readable on the dark header.
+- **Logo asset**: the official lockup lives at `assets/ram-logo.png`
+  (white-on-transparent, trimmed and downscaled for the web). If the logo is
+  ever updated, replace that file — if it goes missing, the header and footer
+  fall back to a text mark automatically.
 - **Org logos**: the "Applied Across Government" section uses text cards;
   swap in official logos only if usage is approved.
 
