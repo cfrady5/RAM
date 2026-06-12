@@ -1,6 +1,6 @@
-# Rapid Acquisition Model (RAM) Website
+# Rapid Acquisition Marketplace (RAM) Website
 
-A static, five-page marketing site for the Rapid Acquisition Model, built to be
+A static, five-page marketing site for the Rapid Acquisition Marketplace, built to be
 hosted on GitHub Pages and linked from Wix.
 
 ## Stack
