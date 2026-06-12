@@ -172,6 +172,21 @@ a { color: inherit; }
 }
 .main-nav a:not(.btn):hover { color: var(--offwhite); }
 
+.main-nav a.active {
+  color: var(--offwhite);
+  position: relative;
+}
+.main-nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--blue);
+}
+
 .nav-cta { padding: 0.55rem 1.15rem; font-size: 0.85rem; }
 
 .menu-toggle {
@@ -950,6 +965,191 @@ a { color: inherit; }
   font-size: 0.82rem;
 }
 
+/* ============ Page hero (interior pages) ============ */
+.page-hero {
+  position: relative;
+  padding: calc(var(--header-h) + 88px) 0 72px;
+  background: linear-gradient(180deg, var(--midnight) 0%, var(--navy) 100%);
+  overflow: hidden;
+}
+
+.page-hero .grid-overlay {
+  mask-image: radial-gradient(ellipse 75% 90% at 50% 0%, black 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 90% at 50% 0%, black 20%, transparent 100%);
+}
+
+.page-hero .container { position: relative; z-index: 1; }
+
+.page-hero h1 {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 700;
+  line-height: 1.1;
+  max-width: 24ch;
+  margin-bottom: 1.1rem;
+}
+
+.page-hero .hero-sub { margin-bottom: 0; }
+.page-hero .hero-ctas { margin: 1.8rem 0 0; }
+
+/* ============ CTA band (interior pages) ============ */
+.cta-band { text-align: center; }
+.cta-band h2 { margin-left: auto; margin-right: auto; }
+.cta-band .section-body { margin: 0 auto; }
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 2rem;
+}
+
+/* ============ Resource cards ============ */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 3rem;
+}
+
+.resource-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.resource-card:hover { border-color: var(--blue); transform: translateY(-3px); }
+
+.resource-card h3 { font-size: 1.12rem; margin-bottom: 0.6rem; }
+.resource-card > p { color: var(--gray); font-size: 0.93rem; margin-bottom: 1.2rem; }
+
+.resource-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.2rem;
+}
+.resource-meta span {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--steel);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+}
+.resource-meta .audience { color: var(--green); border-color: rgba(74, 210, 149, 0.35); }
+
+.resource-card .card-cta { margin-top: auto; }
+
+/* ============ Featured link band ============ */
+.featured-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+  background: linear-gradient(170deg, rgba(45, 107, 255, 0.1), rgba(245, 247, 250, 0.02));
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 36px 40px;
+  margin-top: 3rem;
+}
+.featured-link h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
+.featured-link p { color: var(--gray); font-size: 0.95rem; max-width: 56ch; }
+
+/* ============ Contact path cards ============ */
+.contact-paths {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 3rem;
+}
+
+.contact-path-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 30px 28px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.contact-path-card:hover { border-color: var(--blue); transform: translateY(-3px); }
+.contact-path-card h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
+.contact-path-card p { color: var(--gray); font-size: 0.94rem; }
+
+/* ============ Recognition ============ */
+.recognition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 3rem;
+}
+
+.recognition-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 26px 26px;
+  transition: border-color 0.2s ease;
+}
+.recognition-card:hover { border-color: rgba(74, 210, 149, 0.5); }
+
+.recognition-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(74, 210, 149, 0.1);
+  border: 1px solid rgba(74, 210, 149, 0.3);
+}
+
+.recognition-card h3 { font-size: 1.02rem; margin-bottom: 0.3rem; }
+.recognition-card p { color: var(--gray); font-size: 0.92rem; }
+
+/* ============ Explanation band ============ */
+.explain-band {
+  background: linear-gradient(170deg, rgba(45, 107, 255, 0.08), rgba(245, 247, 250, 0.02));
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 40px 44px;
+  margin-top: 3.5rem;
+}
+.explain-band h3 { font-size: 1.35rem; margin-bottom: 0.7rem; }
+.explain-band p { color: var(--gray); max-width: 70ch; }
+
+/* ============ Process step bullets ============ */
+.process-step ul {
+  list-style: none;
+  margin-top: 0.7rem;
+}
+.process-step ul li {
+  position: relative;
+  padding: 0.28rem 0 0.28rem 1.6rem;
+  color: var(--gray);
+  font-size: 0.94rem;
+}
+.process-step ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 11px;
+  height: 6px;
+  border-left: 2px solid var(--blue);
+  border-bottom: 2px solid var(--blue);
+  transform: rotate(-45deg);
+}
+
 /* ============ Scroll reveal ============ */
 .reveal {
   opacity: 0;
@@ -974,6 +1174,9 @@ a { color: inherit; }
   .org-grid { grid-template-columns: repeat(2, 1fr); }
   .card-row { grid-template-columns: 1fr; }
   .model-cards { grid-template-columns: 1fr; }
+  .resource-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-paths { grid-template-columns: 1fr; }
+  .recognition-grid { grid-template-columns: 1fr; }
   .process-layout { grid-template-columns: 1fr; gap: 40px; }
   .process-intro { position: static; }
 }
@@ -1024,6 +1227,9 @@ a { color: inherit; }
   .outcomes-row, .pillar-grid, .org-grid { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
   .contact-form { padding: 28px 20px; }
+  .resource-grid { grid-template-columns: 1fr; }
+  .featured-link { padding: 28px 24px; }
+  .explain-band { padding: 28px 24px; }
   .audience-card { padding: 30px 24px; }
   .hero-ctas .btn { width: 100%; text-align: center; }
 }

@@ -1,29 +1,33 @@
-/* Rapid Acquisition Marketplace — site interactions */
+/* Rapid Acquisition Marketplace — site interactions (shared across pages) */
 
 (function () {
   "use strict";
 
   /* ---------- Sticky header background on scroll ---------- */
   const header = document.getElementById("siteHeader");
-  const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 24);
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  if (header) {
+    const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 24);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
 
   /* ---------- Mobile menu ---------- */
   const menuToggle = document.getElementById("menuToggle");
   const mainNav = document.getElementById("mainNav");
 
-  menuToggle.addEventListener("click", () => {
-    const open = mainNav.classList.toggle("open");
-    menuToggle.setAttribute("aria-expanded", String(open));
-  });
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener("click", () => {
+      const open = mainNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(open));
+    });
 
-  mainNav.addEventListener("click", (e) => {
-    if (e.target.tagName === "A") {
-      mainNav.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-    }
-  });
+    mainNav.addEventListener("click", (e) => {
+      if (e.target.tagName === "A") {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
 
   /* ---------- Scroll reveal ---------- */
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -98,20 +102,23 @@
   const form = document.getElementById("contactForm");
   const confirmation = document.getElementById("formConfirmation");
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (!form.reportValidity()) return;
+  if (form && confirmation) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
 
-    // TODO: wire to a real endpoint (e.g., Formspree, Wix CRM webhook, or
-    // a serverless function) before launch. GitHub Pages is static, so the
-    // submission currently only confirms client-side.
-    form.querySelectorAll("input, select, textarea, button").forEach((el) => {
-      el.disabled = true;
+      // TODO: wire to a real endpoint (e.g., Formspree, Wix CRM webhook, or
+      // a serverless function) before launch. GitHub Pages is static, so the
+      // submission currently only confirms client-side.
+      form.querySelectorAll("input, select, textarea, button").forEach((el) => {
+        el.disabled = true;
+      });
+      confirmation.hidden = false;
+      confirmation.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" });
     });
-    confirmation.hidden = false;
-    confirmation.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" });
-  });
+  }
 
   /* ---------- Footer year ---------- */
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
 })();
