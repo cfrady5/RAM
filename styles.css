@@ -126,14 +126,16 @@ a { color: inherit; }
   text-decoration: none;
 }
 
-/* Official lockup is white-on-transparent; the header mark sits flush
-   against the viewport's left edge. */
+/* Official lockup is white-on-transparent. The negative margin bleeds the
+   ram head slightly off the viewport edge so the RAM wordmark starts near
+   the content gutter, matching the approved navbar mock. */
 .brand-logo {
-  height: 56px;
+  height: 64px;
   width: auto;
+  margin-left: -14px;
 }
 
-.brand-logo-sm { height: 44px; }
+.brand-logo-sm { height: 44px; margin-left: 0; }
 
 .main-nav {
   display: flex;
@@ -1211,7 +1213,7 @@ a { color: inherit; }
 
 @media (max-width: 560px) {
   .hero { padding-top: calc(var(--header-h) + 40px); }
-  .brand-logo { height: 38px; }
+  .brand-logo { height: 44px; margin-left: -9px; }
   .metric-grid { grid-template-columns: 1fr 1fr; gap: 28px 18px; }
   .outcomes-row, .pillar-grid, .org-grid, .proof-chips { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
