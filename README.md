@@ -41,9 +41,6 @@ domain pointed via CNAME, or linked from Wix).
 - **Contact form**: GitHub Pages is static, so the form currently shows a
   client-side confirmation only. Wire it to Formspree, a Wix CRM webhook, or a
   serverless endpoint (see the TODO in `script.js`).
-- **Marketplace "Learn More" links**: currently route to the Contact page;
-  swap in real marketplace URLs (Tradewinds, DARPA ERIS, Platform One) once
-  approved for public use.
 - **Documents & Guides**: the resource cards route to Contact ("Request
   Access") because no public files exist yet. When documents are ready, host
   them (e.g., in `assets/docs/`) and update the card CTAs to Download/View.

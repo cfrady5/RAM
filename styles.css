@@ -1142,6 +1142,14 @@ a { color: inherit; }
   color: var(--gray);
   font-size: 0.94rem;
 }
+.process-step ul li a {
+  color: var(--gray);
+  text-decoration: underline;
+  text-decoration-color: rgba(45, 107, 255, 0.5);
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+.process-step ul li a:hover { color: var(--offwhite); }
 .process-step ul li::before {
   content: "";
   position: absolute;
