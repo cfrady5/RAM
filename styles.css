@@ -320,21 +320,22 @@ a { color: inherit; }
   margin-bottom: 2rem;
 }
 
-.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 1.6rem; }
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 2.6rem; }
 
 .hero-support { color: var(--steel); font-size: 0.95rem; max-width: 60ch; }
 
 .proof-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
   list-style: none;
 }
 .proof-chips li {
   font-family: var(--font-heading);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  padding: 0.55rem 1.1rem;
+  text-align: center;
+  padding: 0.85rem 1.1rem;
   border: 1px solid var(--card-border);
   border-radius: 999px;
   background: var(--card-bg);
@@ -1226,6 +1227,8 @@ a { color: inherit; }
 
   .menu-toggle { display: flex; }
 
+  .proof-chips { grid-template-columns: repeat(2, 1fr); }
+
   .split { grid-template-columns: 1fr; gap: 40px; }
   .audience-grid { grid-template-columns: 1fr; }
   .marketplace-grid { grid-template-columns: 1fr; }
@@ -1236,7 +1239,7 @@ a { color: inherit; }
   .hero { padding-top: calc(var(--header-h) + 40px); }
   .brand-logo { height: 38px; }
   .metric-grid { grid-template-columns: 1fr 1fr; gap: 28px 18px; }
-  .outcomes-row, .pillar-grid, .org-grid { grid-template-columns: 1fr; }
+  .outcomes-row, .pillar-grid, .org-grid, .proof-chips { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
   .contact-form { padding: 28px 20px; }
   .resource-grid { grid-template-columns: 1fr; }
