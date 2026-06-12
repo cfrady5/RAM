@@ -138,7 +138,9 @@ a { color: inherit; }
 /* keep the text fallback off the raw viewport edge if the image is missing */
 .site-header .brand.logo-missing { padding-left: 24px; }
 
-.brand-fallback { display: none; }
+/* fallback text shows only when the logo image fails to load
+   (.brand selector needed to outrank .brand-text's display rule below) */
+.brand .brand-fallback { display: none; }
 .brand.logo-missing .brand-logo { display: none; }
 .brand.logo-missing .brand-fallback { display: flex; }
 
