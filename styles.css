@@ -1149,6 +1149,63 @@ a { color: inherit; }
 }
 
 /* ==========================================================================
+   Brief components: BLUF, metric note, pathways, explainers
+   ========================================================================== */
+
+/* BLUF "What RAM Does" statement + callout */
+.statement {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  line-height: 1.45;
+  color: var(--offwhite);
+  max-width: 60ch;
+}
+.statement strong { color: var(--blue); font-weight: 600; }
+
+.callout-box {
+  margin-top: 2rem;
+  background: linear-gradient(170deg, rgba(45, 107, 255, 0.1), rgba(245, 247, 250, 0.02));
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--blue);
+  border-radius: 10px;
+  padding: 26px 30px;
+  color: var(--gray);
+  font-size: 1.02rem;
+  max-width: 78ch;
+}
+
+/* Note line below the metric strip */
+.metric-note {
+  margin-top: 2.4rem;
+  text-align: center;
+  color: var(--steel);
+  font-size: 0.92rem;
+  max-width: 90ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Innovator pathway accent (green) to distinguish from government (blue) */
+.process.pathway-innovator .process-steps::before {
+  background: linear-gradient(180deg, var(--green), rgba(110, 133, 168, 0.25));
+}
+.process.pathway-innovator .step-number {
+  color: var(--green);
+  border-color: rgba(74, 210, 149, 0.5);
+}
+.process.pathway-innovator .process-step ul li::before {
+  border-left-color: var(--green);
+  border-bottom-color: var(--green);
+}
+
+/* Awardable / acquisition-authority explainer emphasis */
+.explain-band.accent {
+  border-left: 4px solid var(--green);
+}
+.explain-band p + p { margin-top: 0.9rem; }
+
+/* ==========================================================================
    Responsive
    ========================================================================== */
 

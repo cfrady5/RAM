@@ -11,11 +11,14 @@ Plain HTML, CSS, and vanilla JavaScript — no build step, no dependencies.
 
 | URL | File | Purpose |
 |---|---|---|
-| `/` | `index.html` | Executive summary and gateway: hero + video, value pills, metrics, model preview, audience split, CTA |
-| `/the-model/` | `the-model/index.html` | Full model explanation: what RAM does, video submissions, why RAM matters, process timeline, outcomes |
+| `/` | `index.html` | Landing/gateway: hero + video, "what RAM is" BLUF, metrics strip, the two-pathway split, what makes RAM different, final CTA |
+| `/the-model/` | `the-model/index.html` | The two pathways in depth: government 5-step process + value cards, innovator 5-step process + value cards, "awardable" explainer, U.S. acquisition authority |
 | `/resources/` | `resources/index.html` | Submission pathway, documents & guides, featured links, submission FAQ |
-| `/marketplaces/` | `marketplaces/index.html` | Marketplace ecosystem, applied across government, recognition |
+| `/marketplaces/` | `marketplaces/index.html` | Marketplace ecosystem, proven across government, recognition |
 | `/contact/` | `contact/index.html` | Contact path cards and inquiry form |
+
+The home and final CTAs deep-link into the two pathways via
+`the-model/#government` and `the-model/#innovators`.
 
 Shared assets: `styles.css`, `script.js`, `assets/ram-logo.png`.
 
@@ -44,6 +47,13 @@ domain pointed via CNAME, or linked from Wix).
 - **Documents & Guides**: the resource cards route to Contact ("Request
   Access") because no public files exist yet. When documents are ready, host
   them (e.g., in `assets/docs/`) and update the card CTAs to Download/View.
+- **DEV-X Autonomy & IARPA marketplace cards**: added to the ecosystem per the
+  developer brief, but no public URLs were provided, so their "Learn More"
+  links route to Contact. Swap in real links and tighten the descriptions once
+  confirmed. (Tradewinds, DARPA ERIS, and Platform One link to their live sites.)
+- **"Department of War" vs "Department of Defense"**: the content brief used
+  "Department of Defense" in one place; the site standardizes on "Department of
+  War" per prior direction. Flip if needed.
 - **Logo asset**: the official lockup lives at `assets/ram-logo.png`
   (white-on-transparent, trimmed and downscaled for the web). If the logo is
   ever updated, replace that file — if it goes missing, the header and footer

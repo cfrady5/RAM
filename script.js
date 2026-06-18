@@ -56,13 +56,14 @@
   const formatCount = (el, value) => {
     const prefix = el.dataset.prefix || "";
     const suffix = el.dataset.suffix || "";
-    el.textContent = prefix + value + suffix;
+    const decimals = parseInt(el.dataset.decimals, 10) || 0;
+    el.textContent = prefix + value.toFixed(decimals) + suffix;
   };
 
   const animateCount = (el) => {
-    const target = parseInt(el.dataset.target, 10);
+    const target = parseFloat(el.dataset.target);
     if (reduceMotion || !target) {
-      formatCount(el, target);
+      formatCount(el, target || 0);
       return;
     }
     const duration = 1400;
@@ -70,7 +71,7 @@
     const tick = (now) => {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      formatCount(el, Math.round(target * eased));
+      formatCount(el, target * eased);
       if (progress < 1) requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
