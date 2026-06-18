@@ -47,10 +47,6 @@ domain pointed via CNAME, or linked from Wix).
 - **Documents & Guides**: the resource cards route to Contact ("Request
   Access") because no public files exist yet. When documents are ready, host
   them (e.g., in `assets/docs/`) and update the card CTAs to Download/View.
-- **DEV-X Autonomy & IARPA marketplace cards**: added to the ecosystem per the
-  developer brief, but no public URLs were provided, so their "Learn More"
-  links route to Contact. Swap in real links and tighten the descriptions once
-  confirmed. (Tradewinds, DARPA ERIS, and Platform One link to their live sites.)
 - **"Department of War" vs "Department of Defense"**: the content brief used
   "Department of Defense" in one place; the site standardizes on "Department of
   War" per prior direction. Flip if needed.
