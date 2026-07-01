@@ -1186,6 +1186,26 @@ a { color: inherit; }
   margin-right: auto;
 }
 
+/* Contact path cards act as email links */
+a.contact-path-card {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+a.contact-path-card .card-cta { margin-top: 1rem; }
+
+/* Caption above the marketplace-sponsors grid */
+.org-caption {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--steel);
+  margin: 2.4rem 0 1rem;
+}
+
 /* Innovator pathway accent (green) to distinguish from government (blue) */
 .process.pathway-innovator .process-steps::before {
   background: linear-gradient(180deg, var(--green), rgba(110, 133, 168, 0.25));

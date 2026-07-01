@@ -44,9 +44,14 @@ domain pointed via CNAME, or linked from Wix).
 - **Contact form**: GitHub Pages is static, so the form currently shows a
   client-side confirmation only. Wire it to Formspree, a Wix CRM webhook, or a
   serverless endpoint (see the TODO in `script.js`).
-- **Documents & Guides**: the resource cards route to Contact ("Request
-  Access") because no public files exist yet. When documents are ready, host
-  them (e.g., in `assets/docs/`) and update the card CTAs to Download/View.
+- **Ecosystem email**: the three Contact path cards open a pre-addressed email
+  via `mailto:`, but the address is a placeholder (`ecosystem@example.org`).
+  Replace it with the real ecosystem inbox in `contact/index.html` (3 spots).
+- **July 2026 awards**: three awards are pending (details from Courtney Baker).
+  A placeholder comment marks where they go in `marketplaces/index.html`.
+- **Government activity logos**: the "Proven Across Government" section notes
+  160+ activities in text; a scrolling logo strip can be added once the logo
+  list is available (from Chuck McMartin). Placeholder comment in place.
 - **"Department of War" vs "Department of Defense"**: the content brief used
   "Department of Defense" in one place; the site standardizes on "Department of
   War" per prior direction. Flip if needed.
