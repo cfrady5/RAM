@@ -47,8 +47,6 @@ domain pointed via CNAME, or linked from Wix).
 - **Ecosystem email**: the three Contact path cards open a pre-addressed email
   via `mailto:`, but the address is a placeholder (`ecosystem@example.org`).
   Replace it with the real ecosystem inbox in `contact/index.html` (3 spots).
-- **July 2026 awards**: three awards are pending (details from Courtney Baker).
-  A placeholder comment marks where they go in `marketplaces/index.html`.
 - **Government activity logos**: the "Proven Across Government" section notes
   160+ activities in text; a scrolling logo strip can be added once the logo
   list is available (from Chuck McMartin). Placeholder comment in place.
