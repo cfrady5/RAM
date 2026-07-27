@@ -47,9 +47,17 @@ domain pointed via CNAME, or linked from Wix).
 - **Ecosystem email**: the three Contact path cards open a pre-addressed email
   via `mailto:`, but the address is a placeholder (`ecosystem@example.org`).
   Replace it with the real ecosystem inbox in `contact/index.html` (3 spots).
-- **Government activity logos**: the "Proven Across Government" section notes
-  160+ activities in text; a scrolling logo strip can be added once the logo
-  list is available (from Chuck McMartin). Placeholder comment in place.
+- **Agency logos (marketplace sponsors)**: the "Proven Across Government" grid
+  now renders a logo per sponsor from `assets/agencies/`. Those files do not
+  exist yet, so each card falls back to the agency name as text. Drop the
+  approved files in using the names in `assets/agencies/README.md` and the
+  logos appear with no code change.
+- **Government activity logos (the 160+)**: a separate scrolling strip of the
+  activities that *engage* through a RAM marketplace is still pending the logo
+  list (from Chuck McMartin). Placeholder comment in `marketplaces/index.html`.
+- **Appian demo video**: requested for the top of The Model page. Needs the
+  video URL (YouTube/Vimeo) or file before it can be embedded — the page
+  currently uses an illustrative submission-interface mock in that slot.
 - **"Department of War" vs "Department of Defense"**: the content brief used
   "Department of Defense" in one place; the site standardizes on "Department of
   War" per prior direction. Flip if needed.

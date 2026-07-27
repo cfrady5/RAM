@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css?v=6" />
+  <link rel="stylesheet" href="../styles.css?v=7" />
 </head>
 <body>
 
@@ -115,12 +115,35 @@
         <p class="section-body reveal">More than 160 government activities engage through a RAM marketplace to discover and acquire capabilities. The organizations below have gone a step further and sponsored a RAM marketplace of their own.</p>
 
         <p class="org-caption reveal">Marketplace sponsors</p>
-        <div class="org-grid">
-          <div class="org-card reveal">Defense Advanced Research Projects Agency</div>
-          <div class="org-card reveal">Chief Digital and Artificial Intelligence Office</div>
-          <div class="org-card reveal">Department of the Air Force</div>
-          <div class="org-card reveal">Army Applications Laboratory</div>
-          <div class="org-card reveal">Intelligence Advanced Research Projects Activity</div>
+        <!-- Drop approved logo files into assets/agencies/ using the filenames below
+             (see assets/agencies/README.md). Each card falls back to the agency name
+             until its logo file is present. -->
+        <div class="agency-grid">
+          <div class="agency-logo reveal">
+            <img src="../assets/agencies/darpa.png" alt="Defense Advanced Research Projects Agency"
+                 onerror="this.closest('.agency-logo').classList.add('logo-missing'); this.remove();" />
+            <span class="agency-name">Defense Advanced Research Projects Agency</span>
+          </div>
+          <div class="agency-logo reveal">
+            <img src="../assets/agencies/cdao.png" alt="Chief Digital and Artificial Intelligence Office"
+                 onerror="this.closest('.agency-logo').classList.add('logo-missing'); this.remove();" />
+            <span class="agency-name">Chief Digital and Artificial Intelligence Office</span>
+          </div>
+          <div class="agency-logo reveal">
+            <img src="../assets/agencies/air-force.png" alt="Department of the Air Force"
+                 onerror="this.closest('.agency-logo').classList.add('logo-missing'); this.remove();" />
+            <span class="agency-name">Department of the Air Force</span>
+          </div>
+          <div class="agency-logo reveal">
+            <img src="../assets/agencies/aal.png" alt="Army Applications Laboratory"
+                 onerror="this.closest('.agency-logo').classList.add('logo-missing'); this.remove();" />
+            <span class="agency-name">Army Applications Laboratory</span>
+          </div>
+          <div class="agency-logo reveal">
+            <img src="../assets/agencies/iarpa.png" alt="Intelligence Advanced Research Projects Activity"
+                 onerror="this.closest('.agency-logo').classList.add('logo-missing'); this.remove();" />
+            <span class="agency-name">Intelligence Advanced Research Projects Activity</span>
+          </div>
         </div>
 
         <!-- TODO: add a scrolling strip of government activity logos (150+ / 160+ activities
