@@ -1190,11 +1190,11 @@ a.contact-path-card .card-cta { margin-top: 1rem; }
 }
 .agency-logo:hover { border-color: var(--steel); transform: translateY(-2px); }
 
+/* Every logo file is centred on an identical 2.5:1 transparent canvas, so a
+   full-width image gives each mark the same footprint and optical weight. */
 .agency-logo img {
-  max-height: 68px;
-  max-width: 100%;
-  width: auto;
-  object-fit: contain;
+  width: 100%;
+  height: auto;
 }
 
 .agency-logo .agency-name {
