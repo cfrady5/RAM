@@ -13,7 +13,7 @@ Plain HTML, CSS, and vanilla JavaScript — no build step, no dependencies.
 |---|---|---|
 | `/` | `index.html` | Landing/gateway: hero + video, "what RAM is" BLUF, metrics strip, the two-pathway split, what makes RAM different, final CTA |
 | `/the-model/` | `the-model/index.html` | The two pathways in depth: government 5-step process + value cards, innovator 5-step process + value cards, "awardable" explainer, U.S. acquisition authority |
-| `/resources/` | `resources/index.html` | Submission pathway, documents & guides, featured links, submission FAQ |
+| `/resources/` | `resources/index.html` | Submission pathway, "Find the Right Resource" cards, featured links, submission FAQ |
 | `/marketplaces/` | `marketplaces/index.html` | Marketplace ecosystem, proven across government, recognition |
 | `/contact/` | `contact/index.html` | Contact path cards and inquiry form |
 
