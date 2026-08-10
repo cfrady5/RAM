@@ -621,20 +621,6 @@ a { color: inherit; }
 .marketplace-card h3 { font-size: 1.25rem; margin-bottom: 0.6rem; }
 .marketplace-card > p { color: var(--gray); font-size: 0.96rem; margin-bottom: 1.2rem; }
 
-.marketplace-card dl {
-  display: grid;
-  gap: 10px;
-  margin-bottom: 1.4rem;
-}
-.marketplace-card dt {
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--steel);
-}
-.marketplace-card dd { font-size: 0.9rem; color: var(--gray); }
-
 .card-cta {
   margin-top: auto;
   font-family: var(--font-heading);
