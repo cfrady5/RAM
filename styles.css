@@ -862,6 +862,9 @@ a { color: inherit; }
   font-weight: 500;
 }
 
+/* Shown when the submission could not be delivered. */
+.form-confirmation.is-error { color: #FF9A8B; }
+
 /* ============ Footer ============ */
 .site-footer {
   background: var(--midnight);

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css?v=9" />
+  <link rel="stylesheet" href="../styles.css?v=10" />
 </head>
 <body>
 
@@ -77,8 +77,17 @@
     <section class="section final-cta" id="form">
       <div class="cta-bg" aria-hidden="true"><div class="grid-overlay"></div></div>
       <div class="container">
-        <form class="contact-form reveal" id="contactForm" novalidate>
+        <!-- Posts to Web3Forms, which relays each submission to the inbox tied to
+             the access key. script.js submits it via fetch so the confirmation
+             stays inline; the action/method below are the no-JS fallback. -->
+        <form class="contact-form reveal" id="contactForm" method="POST"
+              action="https://api.web3forms.com/submit" novalidate>
           <h3>Send an Inquiry</h3>
+          <input type="hidden" name="access_key" value="52379ea0-94e4-4e68-ba78-6afa89050fc8" />
+          <input type="hidden" name="subject" value="New RAM inquiry from the website" />
+          <input type="hidden" name="from_name" value="RAM Website" />
+          <!-- Honeypot: bots fill this in, humans never see it. -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="form-grid">
             <label>First Name<input type="text" name="firstName" autocomplete="given-name" required /></label>
             <label>Last Name<input type="text" name="lastName" autocomplete="family-name" required /></label>

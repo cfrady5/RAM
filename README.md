@@ -41,9 +41,13 @@ domain pointed via CNAME, or linked from Wix).
 
 ## Known TODOs before launch
 
-- **Contact form**: GitHub Pages is static, so the form currently shows a
-  client-side confirmation only. Wire it to Formspree, a Wix CRM webhook, or a
-  serverless endpoint (see the TODO in `script.js`).
+- **Contact form**: wired to Web3Forms. `script.js` POSTs the form via `fetch`
+  so the confirmation stays inline; the `action`/`method` on the `<form>` are
+  the no-JS fallback. Submissions go to the inbox registered against the
+  access key in `contact/index.html`. To change the destination, swap that
+  access key. Note the key is a public client-side identifier by design — the
+  form carries a honeypot field for spam, and Web3Forms can add hCaptcha if
+  spam becomes a problem.
 - **Ecosystem email**: the three Contact path cards open a pre-addressed email
   via `mailto:`, but the address is a placeholder (`ecosystem@example.org`).
   Replace it with the real ecosystem inbox in `contact/index.html` (3 spots).

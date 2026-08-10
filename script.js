@@ -104,18 +104,56 @@
   const confirmation = document.getElementById("formConfirmation");
 
   if (form && confirmation) {
-    form.addEventListener("submit", (e) => {
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const submitLabel = submitBtn ? submitBtn.textContent : "";
+
+    const showMessage = (text, isError) => {
+      confirmation.textContent = text;
+      confirmation.classList.toggle("is-error", Boolean(isError));
+      confirmation.hidden = false;
+      confirmation.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" });
+    };
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       if (!form.reportValidity()) return;
 
-      // TODO: wire to a real endpoint (e.g., Formspree, Wix CRM webhook, or
-      // a serverless function) before launch. GitHub Pages is static, so the
-      // submission currently only confirms client-side.
-      form.querySelectorAll("input, select, textarea, button").forEach((el) => {
-        el.disabled = true;
-      });
-      confirmation.hidden = false;
-      confirmation.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" });
+      confirmation.hidden = true;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending…";
+      }
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: new FormData(form),
+        });
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok || result.success === false) {
+          throw new Error(result.message || "Submission failed");
+        }
+
+        // Only lock the form down once the inquiry is actually delivered.
+        form.querySelectorAll("input, select, textarea, button").forEach((el) => {
+          el.disabled = true;
+        });
+        showMessage(
+          "Thank you. Your inquiry has been received. The RAM team will follow up with next steps.",
+          false
+        );
+      } catch (err) {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitLabel;
+        }
+        showMessage(
+          "Something went wrong and your inquiry was not sent. Please try again, or email the RAM team directly using one of the options above.",
+          true
+        );
+      }
     });
   }
 
