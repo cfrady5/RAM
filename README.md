@@ -1,6 +1,6 @@
-# Rapid Acquisition Marketplace (RAM) Website
+# Rapid Acquisition Model (RAM) Website
 
-A static, five-page marketing site for the Rapid Acquisition Marketplace, built to be
+A static, seven-page marketing site for the Rapid Acquisition Model, built to be
 hosted on GitHub Pages and linked from Wix.
 
 ## Stack
@@ -11,16 +11,51 @@ Plain HTML, CSS, and vanilla JavaScript — no build step, no dependencies.
 
 | URL | File | Purpose |
 |---|---|---|
-| `/` | `index.html` | Landing/gateway: hero + video, "what RAM is" BLUF, metrics strip, the two-pathway split, what makes RAM different, final CTA |
-| `/the-model/` | `the-model/index.html` | The two pathways in depth: government 5-step process + value cards, innovator 5-step process + value cards, "awardable" explainer, U.S. acquisition authority |
-| `/resources/` | `resources/index.html` | Submission pathway, "Find the Right Resource" cards, featured links, submission FAQ |
-| `/marketplaces/` | `marketplaces/index.html` | Marketplace ecosystem, proven across government, recognition |
-| `/contact/` | `contact/index.html` | Contact path cards and inquiry form |
+| `/` | `index.html` | Landing: hero, overview video, what RAM is, audience routing, results, what sets RAM apart, marketplace preview, closing CTA |
+| `/government/` | `government/index.html` | Government journey: "what do you need to do?" task cards, the 5-step government pathway, what government users gain |
+| `/industry/` | `industry/index.html` | Industry journey: task cards, marketplace opportunity directory, the 5-step innovator pathway, submission guidance, submission FAQ |
+| `/marketplaces/` | `marketplaces/index.html` | Marketplace directory, how marketplaces support acquisition, proven across government, recognition |
+| `/about/` | `about/index.html` | The deeper model: faster starting point, what "awardable" means, U.S. acquisition authority, what sets RAM apart |
+| `/resources/` | `resources/index.html` | Audience-sorted hub: government resources, industry resources, shared resources |
+| `/contact/` | `contact/index.html` | Inquiry routing cards and the inquiry form |
 
-The home and final CTAs deep-link into the two pathways via
-`the-model/#government` and `the-model/#innovators`.
+`/the-model/` is kept as a redirect to `/about/` so previously shared links
+still resolve.
 
-Shared assets: `styles.css`, `script.js`, `assets/ram-logo.png`.
+Shared assets: `styles.css`, `script.js`, `assets/ram-logo.png`,
+`assets/agencies/`.
+
+## Site rules (Aug 2026 structure)
+
+These are deliberate constraints from the content brief — please preserve them:
+
+- **One primary navigation**, in this order: Home, For Government, For Industry,
+  Marketplaces, About RAM, Resources, Contact. Mobile keeps the same order.
+- **No global "Start a Submission" CTA.** A button label must describe its
+  destination; don't use that label unless it opens a real submission mechanism.
+- **Government and Industry CTAs never cross over.** Government CTAs route only
+  to government content, Marketplaces, or Contact preselected to Government
+  Engagement. Industry CTAs route only to industry content, marketplace
+  opportunity pages, or Contact preselected to Innovator Submissions.
+- **Don't repeat the five-step pathways** on Home, About RAM, or Resources. The
+  government pathway lives on `/government/`, the innovator pathway on
+  `/industry/`.
+- **Homepage metrics are fixed**: Over $4B in awards; 85% nontraditional
+  participation; 300% faster than traditional acquisition.
+- **Don't link production users to the Wix prototype.**
+
+### Contact preselection
+
+Audience CTAs link to Contact with a query string, and `script.js` preselects
+the matching inquiry type on load:
+
+- `?type=government` → Government Engagement
+- `?type=innovator` (or `industry`) → Innovator Submissions
+- `?type=partnership` (or `general`) → Partnerships and General Questions
+- `&subtype=<exact subtype text>` additionally preselects the subtype
+
+Subtype options are defined in the `SUBTYPES` map in `script.js`. Partnerships
+and General Questions has no subtypes, so that field hides itself.
 
 ## Local preview
 
@@ -45,25 +80,24 @@ domain pointed via CNAME, or linked from Wix).
   so the confirmation stays inline; the `action`/`method` on the `<form>` are
   the no-JS fallback. Submissions go to the inbox registered against the
   access key in `contact/index.html`. To change the destination, swap that
-  access key. Note the key is a public client-side identifier by design — the
-  form carries a honeypot field for spam, and Web3Forms can add hCaptcha if
-  spam becomes a problem.
-- **Ecosystem email**: the three Contact path cards open a pre-addressed email
-  via `mailto:`, but the address is a placeholder (`ecosystem@example.org`).
-  Replace it with the real ecosystem inbox in `contact/index.html` (3 spots).
-- **Government activity logos (the 160+)**: a separate scrolling strip of the
-  activities that *engage* through a RAM marketplace is still pending the logo
-  list (from Chuck McMartin). Placeholder comment in `marketplaces/index.html`.
-- **Appian demo video**: requested for the top of The Model page. Needs the
-  video URL (YouTube/Vimeo) or file before it can be embedded — the page
-  currently uses an illustrative submission-interface mock in that slot.
-- **"Department of War" vs "Department of Defense"**: the content brief used
-  "Department of Defense" in one place; the site standardizes on "Department of
-  War" per prior direction. Flip if needed.
+  access key. The key is a public client-side identifier by design — the form
+  carries a honeypot field for spam, and Web3Forms can add hCaptcha if needed.
+  **Not yet verified against a live submission.**
+- **Recognition section**: the content brief asks that award titles, recipients,
+  sponsoring organizations, and dates be verified before publishing. The cards
+  in `marketplaces/index.html` are carried over from earlier content and have
+  not been independently verified.
+- **Government activity logos (the 160+)**: a scrolling strip of the activities
+  that *engage* through a RAM marketplace is still pending the logo list.
+- **Appian demo video**: needs a hosted URL before it can be embedded.
+- **Marketplace card actions**: the brief allows up to two actions per card
+  ("Government Access"/"Explore Solutions" and "Industry Opportunities"/"View
+  Opportunity") *only where the destination supports them*. Each marketplace
+  currently has one authoritative URL, so each card carries a single action.
+  Add the second action per card once separate destinations are confirmed.
 - **Logo asset**: the official lockup lives at `assets/ram-logo.png`
-  (white-on-transparent, trimmed and downscaled for the web). If the logo is
-  ever updated, replace that file — if it goes missing, the header and footer
-  fall back to a text mark automatically.
+  (white-on-transparent, trimmed and downscaled for the web). Agency logos live
+  in `assets/agencies/` — see the README there.
 
 ## Design system
 

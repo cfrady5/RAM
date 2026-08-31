@@ -3,28 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Rapid Acquisition Marketplace</title>
+  <title>Contact | Rapid Acquisition Model</title>
   <meta name="description" content="Connect with the RAM team to ask a question, request an information session, discuss a submission, or explore marketplace engagement." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css?v=10" />
+  <link rel="stylesheet" href="../styles.css?v=11" />
 </head>
 <body>
 
   <header class="site-header" id="siteHeader">
     <div class="header-inner">
-      <a href="../" class="brand" aria-label="Rapid Acquisition Marketplace home">
+      <a href="../" class="brand" aria-label="Rapid Acquisition Model home">
         <img class="brand-logo" src="../assets/ram-logo.png?v=3" alt="RAM — Rapid Acquisition Marketplace" />
       </a>
 
       <nav class="main-nav" id="mainNav" aria-label="Primary">
         <a href="../">Home</a>
-        <a href="../the-model/">The Model</a>
-        <a href="../resources/">Resources</a>
+        <a href="../government/">For Government</a>
+        <a href="../industry/">For Industry</a>
         <a href="../marketplaces/">Marketplaces</a>
-        <a href="./" class="active" aria-current="page">Contact Us</a>
-        <a href="../marketplaces/" class="btn btn-primary nav-cta">Start a Submission</a>
+        <a href="../about/">About RAM</a>
+        <a href="../resources/">Resources</a>
+        <a href="./" class="active" aria-current="page">Contact</a>
       </nav>
 
       <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation menu">
@@ -35,7 +36,7 @@
 
   <main id="top">
 
-    <!-- ============ Page Hero ============ -->
+    <!-- ============ Section 1 — Hero ============ -->
     <section class="page-hero">
       <div class="grid-overlay" aria-hidden="true"></div>
       <div class="container">
@@ -45,35 +46,33 @@
       </div>
     </section>
 
-    <!-- ============ Contact Path Cards ============ -->
+    <!-- ============ Section 2 — Inquiry routing ============ -->
     <section class="section" id="paths">
       <div class="container">
-        <p class="section-label reveal">How Can We Help?</p>
         <h2 class="reveal">Reach the right team for your inquiry.</h2>
 
-        <!-- Each card opens a pre-addressed email to the RAM ecosystem inbox.
-             TODO: replace ecosystem@example.org with the real ecosystem email address. -->
+        <!-- Each button preselects the matching inquiry type, then scrolls to the form. -->
         <div class="contact-paths">
-          <a class="contact-path-card reveal" href="mailto:ecosystem@example.org?subject=RAM%20Government%20Engagement%20Inquiry">
+          <div class="contact-path-card reveal">
             <h3>Government Engagement</h3>
             <p>For agencies, program offices, contracting teams, and mission owners interested in RAM pathways.</p>
-            <span class="card-cta">Email the RAM team</span>
-          </a>
-          <a class="contact-path-card reveal" href="mailto:ecosystem@example.org?subject=RAM%20Innovator%20Submission%20Inquiry">
+            <a href="#form" class="btn btn-primary" data-inquiry-type="Government Engagement">Send a Government Inquiry</a>
+          </div>
+          <div class="contact-path-card reveal">
             <h3>Innovator Submissions</h3>
-            <p>For companies, startups, researchers, and technology developers preparing a capability submission.</p>
-            <span class="card-cta">Email the RAM team</span>
-          </a>
-          <a class="contact-path-card reveal" href="mailto:ecosystem@example.org?subject=RAM%20Partnership%20or%20General%20Inquiry">
+            <p>For companies, startups, researchers, and technology developers preparing a capability submission or looking for the right opportunity.</p>
+            <a href="#form" class="btn btn-primary" data-inquiry-type="Innovator Submissions">Send an Innovator Inquiry</a>
+          </div>
+          <div class="contact-path-card reveal">
             <h3>Partnerships and General Questions</h3>
             <p>For ecosystem partners, media, and general inquiries.</p>
-            <span class="card-cta">Email the RAM team</span>
-          </a>
+            <a href="#form" class="btn btn-primary" data-inquiry-type="Partnerships and General Questions">Send a General Inquiry</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ Contact Form ============ -->
+    <!-- ============ Section 3 — Inquiry form ============ -->
     <section class="section final-cta" id="form">
       <div class="cta-bg" aria-hidden="true"><div class="grid-overlay"></div></div>
       <div class="container">
@@ -87,43 +86,34 @@
           <input type="hidden" name="subject" value="New RAM inquiry from the website" />
           <input type="hidden" name="from_name" value="RAM Website" />
           <!-- Honeypot: bots fill this in, humans never see it. -->
-          <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="form-grid">
             <label>First Name<input type="text" name="firstName" autocomplete="given-name" required /></label>
             <label>Last Name<input type="text" name="lastName" autocomplete="family-name" required /></label>
             <label>Organization<input type="text" name="organization" autocomplete="organization" required /></label>
             <label>Role / Title<input type="text" name="role" autocomplete="organization-title" /></label>
             <label>Email<input type="email" name="email" autocomplete="email" required /></label>
-            <label>Phone<input type="tel" name="phone" autocomplete="tel" /></label>
+            <label>Phone (optional)<input type="tel" name="phone" autocomplete="tel" /></label>
             <label class="full">Inquiry Type
-              <select name="inquiryType" required>
+              <select name="inquiryType" id="inquiryType" required>
                 <option value="" selected disabled>Select one</option>
                 <option>Government Engagement</option>
-                <option>Innovator Submission</option>
-                <option>Documents / Resources</option>
-                <option>Marketplace Question</option>
-                <option>Partnership</option>
-                <option>General Inquiry</option>
+                <option>Innovator Submissions</option>
+                <option>Partnerships and General Questions</option>
               </select>
+            </label>
+            <label class="full form-field-hidden" id="inquirySubtypeField">Inquiry Subtype
+              <select name="inquirySubtype" id="inquirySubtype" disabled></select>
             </label>
             <label class="full">Message<textarea name="message" rows="4"></textarea></label>
             <label class="full consent">
               <input type="checkbox" name="consent" required />
-              <span>I consent to being contacted about the Rapid Acquisition Marketplace.</span>
+              <span>I consent to being contacted about the Rapid Acquisition Model.</span>
             </label>
           </div>
           <button type="submit" class="btn btn-primary">Submit Inquiry</button>
           <p class="form-confirmation" id="formConfirmation" role="status" hidden>Thank you. Your inquiry has been received. The RAM team will follow up with next steps.</p>
         </form>
-
-        <!-- ============ Additional CTA ============ -->
-        <div class="featured-link reveal">
-          <div>
-            <h3>Explore RAM Programs and Pathways</h3>
-            <p>Access RAM-related programs, marketplace links, and engagement opportunities in one place.</p>
-          </div>
-          <a href="https://calebfrady.wixstudio.com/ram-ari" target="_blank" rel="noopener" class="btn btn-secondary">Explore RAM Programs and Pathways</a>
-        </div>
       </div>
     </section>
   </main>
@@ -131,25 +121,26 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="../" class="brand" aria-label="Rapid Acquisition Marketplace home">
+        <a href="../" class="brand" aria-label="Rapid Acquisition Model home">
           <img class="brand-logo brand-logo-sm" src="../assets/ram-logo.png?v=3" alt="RAM — Rapid Acquisition Marketplace" />
         </a>
         <p>RAM helps government and innovators move from discovery to awardable outcomes through faster, clearer, and more transparent acquisition pathways.</p>
       </div>
       <nav class="footer-nav" aria-label="Footer">
         <a href="../">Home</a>
-        <a href="../the-model/">The Model</a>
-        <a href="../resources/">Resources</a>
+        <a href="../government/">For Government</a>
+        <a href="../industry/">For Industry</a>
         <a href="../marketplaces/">Marketplaces</a>
-        <a href="./">Contact Us</a>
-        <a href="https://calebfrady.wixstudio.com/ram-ari" target="_blank" rel="noopener">RAM Programs &amp; Pathways</a>
+        <a href="../about/">About RAM</a>
+        <a href="../resources/">Resources</a>
+        <a href="./">Contact</a>
       </nav>
       <div class="footer-cta">
         <a href="#form" class="btn btn-secondary">Send an Inquiry</a>
       </div>
     </div>
     <div class="container footer-bottom">
-      <p>&copy; <span id="year"></span> Rapid Acquisition Marketplace. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Rapid Acquisition Model. All rights reserved.</p>
     </div>
   </footer>
 

@@ -99,6 +99,82 @@
     });
   });
 
+  /* ---------- Contact: inquiry type, subtypes, and audience preselection ----------
+     Subtypes depend on the chosen inquiry type. Government and Industry CTAs
+     across the site link here with ?type=... (and optionally &subtype=...) so a
+     visitor lands with their audience already selected. */
+  const SUBTYPES = {
+    "Government Engagement": [
+      "Find an existing solution",
+      "Address a mission need / explore a RAM pathway",
+      "Government marketplace access or question",
+      "General government inquiry",
+    ],
+    "Innovator Submissions": [
+      "Find the right opportunity",
+      "Submission requirements or support",
+      "Marketplace-specific question",
+      "General innovator inquiry",
+    ],
+  };
+
+  // Short URL keys -> the inquiry type they select.
+  const TYPE_ALIASES = {
+    government: "Government Engagement",
+    innovator: "Innovator Submissions",
+    industry: "Innovator Submissions",
+    partnership: "Partnerships and General Questions",
+    general: "Partnerships and General Questions",
+  };
+
+  const typeSelect = document.getElementById("inquiryType");
+  const subtypeSelect = document.getElementById("inquirySubtype");
+  const subtypeField = document.getElementById("inquirySubtypeField");
+
+  const syncSubtypes = (preferred) => {
+    if (!typeSelect || !subtypeSelect || !subtypeField) return;
+    const options = SUBTYPES[typeSelect.value];
+
+    if (!options) {
+      // Partnerships and General Questions has no subtypes — hide the field so
+      // it never submits a stale value from a previously chosen type.
+      subtypeField.classList.add("form-field-hidden");
+      subtypeSelect.innerHTML = "";
+      subtypeSelect.disabled = true;
+      return;
+    }
+
+    subtypeField.classList.remove("form-field-hidden");
+    subtypeSelect.disabled = false;
+    subtypeSelect.innerHTML =
+      '<option value="" selected disabled>Select one</option>' +
+      options.map((o) => `<option>${o}</option>`).join("");
+
+    if (preferred && options.includes(preferred)) subtypeSelect.value = preferred;
+  };
+
+  if (typeSelect) {
+    typeSelect.addEventListener("change", () => syncSubtypes());
+
+    const params = new URLSearchParams(window.location.search);
+    const requestedType = TYPE_ALIASES[(params.get("type") || "").toLowerCase()];
+    if (requestedType) {
+      typeSelect.value = requestedType;
+      syncSubtypes(params.get("subtype") || undefined);
+    } else {
+      syncSubtypes();
+    }
+  }
+
+  // Inquiry routing cards set the type, then scroll to the form.
+  document.querySelectorAll("[data-inquiry-type]").forEach((el) => {
+    el.addEventListener("click", () => {
+      if (!typeSelect) return;
+      typeSelect.value = el.dataset.inquiryType;
+      syncSubtypes();
+    });
+  });
+
   /* ---------- Contact form ---------- */
   const form = document.getElementById("contactForm");
   const confirmation = document.getElementById("formConfirmation");
