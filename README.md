@@ -40,7 +40,7 @@ These are deliberate constraints from the content brief — please preserve them
 - **Don't repeat the five-step pathways** on Home, About RAM, or Resources. The
   government pathway lives on `/government/`, the innovator pathway on
   `/industry/`.
-- **Homepage metrics are fixed**: Over $4B in awards; 85% nontraditional
+- **Homepage metrics are fixed**: Over $5B in awards made; 85% nontraditional
   participation; 300% faster than traditional acquisition.
 - **Don't link production users to the Wix prototype.**
 
