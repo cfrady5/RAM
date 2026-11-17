@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css?v=11" />
+  <link rel="stylesheet" href="../styles.css?v=12" />
 </head>
 <body>
 
@@ -59,26 +59,23 @@
           <p class="section-body reveal">RAM replaces lengthy initial submissions with concise, five- to seven-minute video pitches evaluated against published criteria. This gives government reviewers an early, focused view of the technology, team, use case, and mission relevance before advancing to deeper engagement.</p>
         </div>
 
-        <div class="split-visual reveal" aria-label="Illustration of a video-based solution submission interface">
-          <div class="ui-card">
-            <div class="ui-card-header">
-              <span class="ui-dot"></span><span class="ui-dot"></span><span class="ui-dot"></span>
-              <span class="ui-title">Solution Submission</span>
-              <span class="ui-status">Awardable</span>
-            </div>
-            <div class="ui-video">
-              <span class="ui-play" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="#F5F7FA"><path d="M8 5v14l11-7z"/></svg>
-              </span>
-              <span class="ui-video-label">5–7 minute solution pitch</span>
-            </div>
-            <ul class="ui-checklist">
-              <li>Structured technical framing</li>
-              <li>Published evaluation criteria</li>
-              <li>SME-informed review</li>
-              <li>Marketplace visibility</li>
-            </ul>
+        <div class="split-visual reveal">
+          <div class="video-frame">
+            <video controls preload="metadata" playsinline
+                   poster="../assets/ram-explainer-poster.jpg"
+                   aria-label="Rapid Acquisition Model explainer video">
+              <source src="../assets/ram-explainer.mp4" type="video/mp4" />
+              Your browser cannot play embedded video.
+              <a href="../assets/ram-explainer.mp4">Download the RAM explainer video</a>.
+            </video>
           </div>
+          <ul class="ui-checklist video-points">
+            <li>5–7 minute solution pitch</li>
+            <li>Structured technical framing</li>
+            <li>Published evaluation criteria</li>
+            <li>SME-informed review</li>
+            <li>Marketplace visibility</li>
+          </ul>
         </div>
       </div>
     </section>

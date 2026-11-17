@@ -254,13 +254,18 @@ a { color: inherit; }
   box-shadow: 0 24px 64px rgba(2, 7, 19, 0.65), 0 0 0 1px rgba(45, 107, 255, 0.12);
 }
 
-.video-frame iframe {
+.video-frame iframe,
+.video-frame video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
+  background: var(--midnight);
 }
+
+/* Supporting points beneath the self-hosted explainer video */
+.video-points { margin-top: 1.6rem; margin-bottom: 0; }
 
 .video-caption {
   margin-top: 0.9rem;
@@ -444,67 +449,6 @@ a { color: inherit; }
 
 .split-text .btn { margin-top: 1.6rem; }
 
-.ui-card {
-  background: linear-gradient(160deg, rgba(245, 247, 250, 0.06), rgba(245, 247, 250, 0.02));
-  border: 1px solid var(--card-border);
-  border-radius: 14px;
-  padding: 22px;
-  box-shadow: 0 24px 60px rgba(2, 7, 19, 0.6);
-}
-
-.ui-card-header {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin-bottom: 16px;
-}
-.ui-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--steel); opacity: 0.5; }
-.ui-title {
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-left: 8px;
-  color: var(--gray);
-}
-.ui-status {
-  margin-left: auto;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--green);
-  border: 1px solid rgba(74, 210, 149, 0.4);
-  border-radius: 999px;
-  padding: 0.25rem 0.7rem;
-}
-
-.ui-video {
-  position: relative;
-  aspect-ratio: 16 / 8;
-  border-radius: 10px;
-  background:
-    radial-gradient(circle at 30% 40%, rgba(45, 107, 255, 0.25), transparent 60%),
-    var(--navy);
-  border: 1px solid rgba(45, 107, 255, 0.25);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 18px;
-}
-.ui-play {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: rgba(45, 107, 255, 0.85);
-  padding-left: 4px;
-}
-.ui-video-label { font-size: 0.85rem; color: var(--gray); }
-
 .ui-checklist { list-style: none; margin-bottom: 18px; }
 .ui-checklist li {
   position: relative;
@@ -526,16 +470,6 @@ a { color: inherit; }
   transform: rotate(-45deg);
 }
 
-.ui-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.ui-tags span {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: var(--steel);
-  border: 1px solid var(--card-border);
-  border-radius: 999px;
-  padding: 0.25rem 0.7rem;
-}
 
 /* ============ Process ============ */
 .process-layout {

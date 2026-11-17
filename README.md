@@ -23,7 +23,8 @@ Plain HTML, CSS, and vanilla JavaScript — no build step, no dependencies.
 still resolve.
 
 Shared assets: `styles.css`, `script.js`, `assets/ram-logo.png`,
-`assets/agencies/`.
+`assets/agencies/`, and the self-hosted explainer video
+(`assets/ram-explainer.mp4` + poster), embedded on `/about/`.
 
 ## Site rules (Aug 2026 structure)
 
@@ -89,7 +90,6 @@ domain pointed via CNAME, or linked from Wix).
   not been independently verified.
 - **Government activity logos (the 160+)**: a scrolling strip of the activities
   that *engage* through a RAM marketplace is still pending the logo list.
-- **Appian demo video**: needs a hosted URL before it can be embedded.
 - **Marketplace card actions**: the brief allows up to two actions per card
   ("Government Access"/"Explore Solutions" and "Industry Opportunities"/"View
   Opportunity") *only where the destination supports them*. Each marketplace
